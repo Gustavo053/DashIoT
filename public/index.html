@@ -1,0 +1,347 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darshboard for ESP32</title>
+    <link rel="shortcut icon" href="./img/Loading page.svg" />
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/inputs.css" />
+    <link rel="stylesheet" href="./css/custom_select.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title-main">Dashboard</h3>
+        </header>
+        <main>
+            <div>
+                <div>
+                    <label class="label" for="">Select type:</label>
+                    <br />
+                    <div class="select-type">
+                        <button typeAction="analog" class="bt-standard bt-standard-select">Analog</button>
+                        <button typeAction="digital" class="bt-standard bt-standard-select">Digital</button>
+                    </div>
+                </div>
+                <label class="label" for="">Port:</label>
+                <br />
+                <div>
+                    <input id="port" class="input-standard input-text-config" placeholder="Insert the port"
+                        type="text" />
+                </div>
+                <label class="label" for="">Firebase:</label>
+                <br />
+                <div>
+                    <input id="database" class="input-standard input-text-config" placeholder="Insert the firebase link"
+                        type="text" />
+                </div>
+                <label class="label" for="">Broker MQTT:</label>
+                <br />
+                <div>
+                    <input id="broker" class="input-standard input-text-config"
+                        placeholder="Insert the link broker MQTT" type="text" />
+                </div>
+                <label class="label" for="">Select what you want:</label>
+                <br />
+                <div>
+                    <div class="select-action-1">
+                        <button option="read" data-digital-script="script1" data-analog-script="script1"
+                            class="bt-standard bt-action-select">Read</button>
+                        <button option="write" data-digital-script="script2" data-analog-script="script2"
+                            class="bt-standard bt-action-select">Write</button>
+                    </div>
+                    <div class="select-action-1">
+                        <button option="readAndWrite" data-digital-script="script3" data-analog-script="script3"
+                            class="bt-standard bt-action-select">Read
+                            and
+                            Write</button>
+                        <a class="bt-standard-2 select-action-2" target="_blank" href="./graphic.html">
+                            <button option="plot" class="bt-standard-2 bt-action-select">Plot data</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="digitalRead">
+                    <div class="container-2">
+                        <div class="padding-top-10">
+                            <label for="">Select read pin:</label>
+                            <br />
+                            <div class="custom-select">
+                                <select name="pinReadDigital" id="pinReadDigital">
+                                    <option value="0">Select</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="digitalWrite">
+                    <div class="container-2">
+                        <div class="padding-top-10">
+                            <label for="">Select write pin:</label>
+                            <br />
+                            <div class="custom-select">
+                                <select name="pinWriteDigital" id="pinWriteDigital">
+                                    <option value="0">Select</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                </select>
+                            </div>
+                            <div class="padding-top-10">
+                                <label for="">Select value:</label>
+                                <div class="select-type">
+                                    <button data-value="1" class="bt-standard bt-digital-value">HIGH</button>
+                                    <button data-value="0" class="bt-standard bt-digital-value">LOW</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="digitalReadWrite">
+                    <div class="container-2">
+                        <div class="padding-top-10">
+                            <label for="">Select read pin:</label>
+                            <br />
+                            <div class="custom-select">
+                                <select name="pinReadWriteDigital1" id="pinReadWriteDigital1">
+                                    <option value="0">Select</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="padding-top-10">
+                            <label for="">Select write pin:</label>
+                            <br />
+                            <div class="custom-select">
+                                <select name="pinReadWriteDigital2" id="pinReadWriteDigital2">
+                                    <option value="0">Select</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="analogRead">
+                    <div class="container-2">
+                        <div class="padding-top-10">
+                            <label for="">Select read pin:</label>
+                            <br />
+                            <div class="custom-select">
+                                <select name="pinReadAnalog" id="pinReadAnalog">
+                                    <option value="0">Select</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="36">35</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="analogWrite">
+                    <div class="container-2">
+                        <div class="padding-top-10">
+                            <label for="">Select write pin:</label>
+                            <br />
+                            <div class="custom-select">
+                                <select name="pinWriteAnalog" id="pinWriteAnalog">
+                                    <option value="0">Select</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="padding-top-10">
+                            <label for="">Channel:</label>
+                            <input id="channel1" placeholder="Insert the channel" class="input-standard" type="text" />
+                        </div>
+                        <div class="padding-top-10">
+                            <label for="">Resolution:</label>
+                            <input id="resolution1" placeholder="Insert the resolution" class="input-standard"
+                                type="text" />
+                        </div>
+                        <div class="padding-top-10">
+                            <label for="">Value:</label>
+                            <input id="value" placeholder="Insert the value" class="input-standard" type="number" />
+                        </div>
+                    </div>
+                </div>
+                <div class="analogReadWrite">
+                    <div class="container-2">
+                        <div class="padding-top-10">
+                            <label for="">Select read pin:</label>
+                            <br />
+                            <div class="custom-select">
+                                <select name="pinReadWriteAnalog1" id="pinReadWriteAnalog1">
+                                    <option value="0">Select</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="36">35</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="padding-top-10">
+                            <label for="">Select write pin:</label>
+                            <br />
+                            <div class="custom-select">
+                                <select name="pinReadWriteAnalog2" id="pinReadWriteAnalog2">
+                                    <option value="0">Select</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="padding-top-10">
+                            <label for="">Channel:</label>
+                            <input id="channel2" placeholder="Insert the channel" class="input-standard" type="text" />
+                        </div>
+                        <div class="padding-top-10">
+                            <label for="">Resolution:</label>
+                            <input id="resolution2" placeholder="Insert the resolution" class="input-standard"
+                                type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="option2"></div>
+                <div class="option3"></div>
+                <div class="start-action">
+                    <button id="enviar" class="bt-submit">Submit</button>
+                    <button id="parar" class="bt-stop">Stop</button>
+                </div>
+                <p>01000101 01010011 01010000 00110011 00110010</p>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="../js/input_value.js"></script>
+<script src="../js/custom_select.js"></script>
+<script src="../js/hidden.js"></script>
+<script src="../backend/controllers/Control.js"></script>
+
+</html>

@@ -1,0 +1,127 @@
+.bt-standard {
+    height: var(--input-height);
+    font-size: var(--font-size);
+    text-align: center;
+    font-weight: bold;
+    outline-style: none;
+    background-color: transparent;
+    color: #ffffff;
+    border-color: var(--color-second);
+    border-radius: var(--radius);
+    width: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.bt-standard-2 {
+    height: var(--input-height);
+    font-size: var(--font-size);
+    text-align: center;
+    outline-style: none;
+    background-color: #6351AB;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius);
+    width: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.bt-standard-2 .bt-standard-2 {
+    width: 100%;
+    height: 100%;
+}
+
+.bt-standard-select {}
+
+.bt-action-select {}
+
+.bt-digital-value {}
+
+.bt-selected {
+    height: var(--input-height);
+    font-size: var(--font-size);
+    text-align: center;
+    outline-style: none;
+    background-color: var(--color-second);
+    color: #ffffff;
+    border-color: var(--color-second);
+    border-radius: var(--radius);
+    width: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.bt-selected-2 {
+    height: var(--input-height);
+    font-size: var(--font-size);
+    text-align: center;
+    outline-style: none;
+    background-color: #6351AB;
+    color: #ffffff;
+    border-color: #6351AB;
+    border-radius: var(--radius);
+    width: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.bt-standard-2:hover {
+    box-shadow: 0px 4px 20px rgba(167, 167, 167, 0.25);
+}
+
+.bt-standard:hover {
+    background-color: var(--color-second);
+}
+
+.input-standard {
+    font-size: var(--font-size);
+    padding-left: 20px;
+    height: 55px;
+    text-align: left;
+    outline-style: none;
+    background-color: transparent;
+    border-color: var(--color-second);
+    border-radius: var(--radius);
+    width: 100%;
+    color: #ffffff;
+}
+
+.bt-submit {
+    height: var(--input-height);
+    font-size: var(--font-size);
+    text-align: center;
+    outline-style: none;
+    background-color: #6CE569;
+    border-color: #6CE569;
+    border-style: none;
+    color: #ffffff;
+    border-radius: var(--radius);
+    width: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.bt-submit:hover {
+    box-shadow: 0px 4px 20px rgba(167, 167, 167, 0.45);
+}
+
+.bt-stop {
+    height: var(--input-height);
+    font-size: var(--font-size);
+    text-align: center;
+    outline-style: none;
+    background-color: transparent;
+    color: #ffffff;
+    border-color: var(--color-second);
+    border-radius: var(--radius);
+    width: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.bt-stop:hover {
+    border-color: #C66F6F;
+    background-color: #C66F6F;
+}
+
