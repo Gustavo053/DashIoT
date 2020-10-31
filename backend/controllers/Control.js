@@ -1,9 +1,5 @@
 const { ipcRenderer } = require('electron');
 
-let port = document.getElementById('port').value;
-let database = document.getElementById('database').value;
-let broker = document.getElementById('broker').value;
-
 let action;
 let execAction;
 let scriptRubyAnalog;
@@ -55,11 +51,28 @@ readValues();
 document.getElementById('enviar').addEventListener('click', (event) => {
     event.preventDefault();
 
+    let port = document.getElementById('port').value;
+    let database = document.getElementById('database').value;
+    let broker = document.getElementById('broker').value;
+
+    if (!port || port == undefined || port == null) {
+        alert('Port is not defined');
+        return;
+    }
+
     //verifica qual foi a escolha (analógica/digital) e qual a ação que será executada
     if (action == 'analog') {
         if (execAction == 'read') {
             let readPin = document.getElementById('pinReadAnalog').value;
-            let data = scriptRubyAnalog + ' ' + readPin;
+            if (!database || database == undefined || database == null) {
+                database = '';
+            }
+
+            if (!broker || broker == undefined || broker == null) {
+                broker = '';
+            }
+
+            let data = scriptRubyAnalog + ' ' + readPin + ' ' + port + ' ' + database + ' ' + broker;
             console.log(data);
             // envioMsg(data);
         } else if (execAction == 'write') {
@@ -69,6 +82,14 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             console.log(value);
             console.log(channel1);
             let resolution1 = document.getElementById('resolution1').value;
+
+            if (database == undefined || database == null) {
+                database = '';
+            }
+
+            if (broker == undefined || broker == null) {
+                broker = '';
+            }
 
             //validação do canal
             if (!channel1 || channel1 == undefined || channel1 == null) {
@@ -84,7 +105,7 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             if ((!value || value == 'undefined' || value == null) || (writePin == 'undefined' || writePin == null)) {
                 alert('It is necessary to pass a value');
             } else {
-                let data = scriptRubyAnalog + ' ' + writePin + ' ' + value + ' ' + channel1 + ' ' + resolution1;
+                let data = scriptRubyAnalog + ' ' + writePin + ' ' + value + ' ' + channel1 + ' ' + resolution1 + ' ' + port + ' ' + database + ' ' + broker;
                 console.log(data);
                 // envioMsg(data);
             }
@@ -93,6 +114,14 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             let writePin = document.getElementById('pinReadWriteAnalog2').value;
             let channel2 = document.getElementById('channel2').value;
             let resolution2 = document.getElementById('resolution2').value;
+
+            if (database == undefined || database == null) {
+                database = '';
+            }
+
+            if (broker == undefined || broker == null) {
+                broker = '';
+            }
 
             //validação do canal
             if (!channel2 || channel2 == 'undefined' || channel2 == null) {
@@ -107,7 +136,8 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             if ((readPin == 'undefined' || readPin == null) || (writePin == 'undefined' || writePin == null)) {
                 alert('It is necessary to pass the pins');
             } else {
-                let data = scriptRubyAnalog + ' ' + readPin + ' ' + writePin + ' ' + channel2 + ' ' + resolution2;
+                console.log(database);
+                let data = scriptRubyAnalog + ' ' + readPin + ' ' + writePin + ' ' + channel2 + ' ' + resolution2 + ' ' + port + ' ' + database + ' ' + broker;
                 console.log(data);
                 // envioMsg(data);
             }
@@ -116,34 +146,48 @@ document.getElementById('enviar').addEventListener('click', (event) => {
         if (execAction == 'read') {
             let readPin = document.getElementById('pinReadDigital').value;
 
-            let data = scriptRubyDigital + ' ' + readPin;
+            if (database == undefined || database == null) {
+                database = '';
+            }
+
+            if (broker == undefined || broker == null) {
+                broker = '';
+            }
+
+            let data = scriptRubyDigital + ' ' + readPin + ' ' + port + ' ' + database + ' ' + broker;
             console.log(data);
             // envioMsg(data); do usuário
         } else if (execAction == 'write') {
             let writePin = document.getElementById('pinWriteDigital').value;
 
-            let data = scriptRubyDigital + ' ' + writePin + ' ' + writeDigitalValue;
+            if (database == undefined || database == null) {
+                database = '';
+            }
+
+            if (broker == undefined || broker == null) {
+                broker = '';
+            }
+
+            let data = scriptRubyDigital + ' ' + writePin + ' ' + writeDigitalValue + ' ' + port + ' ' + database + ' ' + broker;
             console.log(data);
             // envioMsg(data);
         } else if (execAction == 'readAndWrite') {
             let readPin = document.getElementById('pinReadWriteDigital1').value;
             let writePin = document.getElementById('pinReadWriteDigital2').value;
 
-            let data = scriptRubyDigital + ' ' + readPin + ' ' + writePin;
+            if (database == undefined || database == null) {
+                database = '';
+            }
+
+            if (broker == undefined || broker == null) {
+                broker = '';
+            }
+
+            let data = scriptRubyDigital + ' ' + readPin + ' ' + writePin + ' ' + port + ' ' + database + ' ' + broker;
             console.log(data);
             // envioMsg(data);
         }
     }
-
-    // let data;
-
-    // let read = document.getElementById('leitura').value;
-    // let write = document.getElementById('escrita').value
-
-    // data = read + " " + porta + " " + leitura + " " + escrita;
-    // console.log(data);
-
-    // envioMsg(data);
 });
 
 //Esse código pega o evento de click do botão parar, restaura o comportamento e 

@@ -29,7 +29,7 @@
                 <label class="label" for="">Port:</label>
                 <br />
                 <div>
-                    <input id="port" class="input-standard input-text-config" placeholder="Insert the port"
+                    <input required id="port" class="input-standard input-text-config" placeholder="Insert the port"
                         type="text" />
                 </div>
                 <label class="label" for="">Firebase:</label>
@@ -66,7 +66,7 @@
                 <div class="digitalRead">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select read pin:</label>
+                            <label for="">Select pin to read:</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadDigital" id="pinReadDigital">
@@ -105,7 +105,7 @@
                 <div class="digitalWrite">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select write pin:</label>
+                            <label for="">Select pin to write:</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinWriteDigital" id="pinWriteDigital">
@@ -151,7 +151,7 @@
                 <div class="digitalReadWrite">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select read pin:</label>
+                            <label for="">Select pin to read:</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadWriteDigital1" id="pinReadWriteDigital1">
@@ -178,7 +178,7 @@
                             </div>
                         </div>
                         <div class="padding-top-10">
-                            <label for="">Select write pin:</label>
+                            <label for="">Select pin to write:</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadWriteDigital2" id="pinReadWriteDigital2">
@@ -209,7 +209,7 @@
                 <div class="analogRead">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select read pin:</label>
+                            <label for="">Select pin to read:</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadAnalog" id="pinReadAnalog">
@@ -229,7 +229,7 @@
                 <div class="analogWrite">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select write pin:</label>
+                            <label for="">Select pin to write:</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinWriteAnalog" id="pinWriteAnalog">
@@ -267,14 +267,15 @@
                         </div>
                         <div class="padding-top-10">
                             <label for="">Value:</label>
-                            <input id="value" placeholder="Insert the value" class="input-standard" type="number" />
+                            <input required id="value" placeholder="Insert the value" class="input-standard"
+                                type="number" />
                         </div>
                     </div>
                 </div>
                 <div class="analogReadWrite">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select read pin:</label>
+                            <label for="">Select pin to read:</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadWriteAnalog1" id="pinReadWriteAnalog1">
@@ -290,7 +291,7 @@
                             </div>
                         </div>
                         <div class="padding-top-10">
-                            <label for="">Select write pin:</label>
+                            <label for="">Select pin to write:</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadWriteAnalog2" id="pinReadWriteAnalog2">

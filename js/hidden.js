@@ -19,6 +19,22 @@ buttonsTypeAction.forEach(element => {
     element.addEventListener('click', () => {
         typeAction = element.getAttribute('typeAction');
         console.log(typeAction);
+
+        //de acordo com a escolha, o campo de escrita é modificado
+        //se for digital, entao write. Se for analog, entao pwm output
+        if (typeAction == 'analog') {
+            buttons.forEach(buttom => {
+                if (buttom.getAttribute('option') == 'write') {
+                    buttom.innerHTML = 'Pwm output';
+                }
+            });
+        } else {
+            buttons.forEach(buttom => {
+                if (buttom.getAttribute('option') == 'write') {
+                    buttom.innerHTML = 'Write';
+                }
+            });
+        }
     });
 });
 
