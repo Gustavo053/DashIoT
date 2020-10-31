@@ -1,9 +1,27 @@
 require 'rubygems'
 require 'arduino_firmata'
-#path C:\Ruby27-x64\lib\ruby\gems\2.7.0\gems\arduino_firmata-0.3.7
+require 'firebase'
+require 'mqtt'
 
+#pega os argumentos que o electron enviou por linha de comando
+pinToRead, port, database, broker = ARGV
 
-esp32 = ArduinoFirmata.connect '/dev/ttyUSB0'
+#conexão com o banco de dados
+firebase_url = 'https://testesp32-d34c1.firebaseio.com/'
+firebase = Firebase::Client.new(firebase_url)
+
+# response = firebase.push('analogRead', {
+#     :data => 'null'
+# })
+
+#conexão com o broker mqtt
+mqtt_url = 'mqtt://77d7a1cb:b954dcddc878e4d7@broker.shiftr.io'
+client = MQTT::Client.connect(mqtt_url, client_id: 'Electron application')
+
+#converte para inteiro
+pinToRead = pinToRead.to_i
+
+esp32 = ArduinoFirmata.connect port
 #registro (listener)
 esp32.on :sysex do |command, data|
     if command == 0x02
@@ -15,17 +33,30 @@ esp32.on :sysex do |command, data|
                 dataHwToFw += data[i]
             end
         end
+
+        # firebase.update('analogRead', {
+        #     :data => dataHwToFw
+        # })
+
+        # client.publish('data', dataHwToFw)
         puts dataHwToFw # o que recebeu do HW (a leitura em si)
     end
 end
 
-pinToRead  = 33
 dataFwToHw = []
 # parte fixa (pin)
 dataFwToHw.push(pinToRead)
 
 print dataFwToHw
+
+# i = 0
 loop do
-   esp32.sysex 0x02, dataFwToHw                             
-   sleep 0.01
+    # firebase.update('analogRead', {
+    #     :data => i
+    # })
+    # i = i + 1
+    # puts 'updated'
+
+    esp32.sysex 0x02, dataFwToHw                             
+    sleep 0.01
 end
