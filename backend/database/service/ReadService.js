@@ -13,6 +13,6 @@ mongoose.connect('mongodb://localhost/readings', {
 });
 
 //listenner do canal data-persistence
-//recebe os dados enviados do frontend para salvar no banco de dados
+//recebe os dados enviados do frontend e envia para a camada de serviço
 ipcMain.on('data-persistence', (event, data) => {
 });

@@ -5,10 +5,6 @@ require 'mqtt'
 #pega os argumentos que o electron enviou por linha de comando
 pinToRead, port, database, broker = ARGV
 
-#conexão com o banco de dados
-firebase_url = 'https://testesp32-d34c1.firebaseio.com/'
-firebase = Firebase::Client.new(firebase_url)
-
 #conexão com o broker mqtt
 mqtt_url = '127.0.0.1 localhost:1883'
 client = MQTT::Client.connect(mqtt_url, client_id: 'Electron application')

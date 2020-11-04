@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-//Cria o Schema(como se fosse a tabela) da leitura
+//Cria o Schema(como se fosse a tabela) dos dados da leitura
 const readSchema = mongoose.Schema({
     data: {
         type: Number,

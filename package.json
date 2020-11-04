@@ -11,6 +11,7 @@
   "devDependencies": {},
   "dependencies": {
     "electron": "^10.1.5",
-    "mongoose": "^5.10.11"
+    "mongoose": "^5.10.11",
+    "mqtt": "^4.2.4"
   }
 }
