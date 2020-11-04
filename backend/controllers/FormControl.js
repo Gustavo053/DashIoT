@@ -11,7 +11,7 @@ function readValues() {
     let valueTypeAction = document.querySelectorAll('.bt-standard-select');
     valueTypeAction.forEach(element => {
         element.addEventListener('click', event => {
-            event.preventDefault();
+            // event.preventDefault();
             //pega a escolha da ação do usuário (analógica ou digital)
             action = element.getAttribute('typeAction');
             console.log(action);
@@ -21,7 +21,7 @@ function readValues() {
     let valueExecAction = document.querySelectorAll('.bt-action-select');
     valueExecAction.forEach(element => {
         element.addEventListener('click', event => {
-            event.preventDefault();
+            // event.preventDefault();
             //pega a escolha da execução do usuário (leitura, escrita ou leitura e escrita)
             execAction = element.getAttribute('option');
             //pega os scripts para a execução

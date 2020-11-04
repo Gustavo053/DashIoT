@@ -8,8 +8,9 @@
   },
   "author": "Gustavo",
   "license": "MIT",
-  "devDependencies": {
-    "electron": "^10.1.3"
-  },
-  "dependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "electron": "^10.1.5",
+    "mongoose": "^5.10.11"
+  }
 }
