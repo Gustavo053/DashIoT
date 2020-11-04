@@ -1,8 +1,10 @@
-// const { ipcRenderer } = require('electron');
+// const electron = require('electron');
 const mqtt = require('mqtt');
+let readingValues = document.getElementById('values');
 
 const client = mqtt.connect('mqtt://localhost:1883');
 
+//Se conecta e dá um subscribe no broker 'data'
 client.on('connect', () => {
     client.subscribe('data', (err) => {
         if (err) {
@@ -11,8 +13,9 @@ client.on('connect', () => {
     });
 });
 
+//recebe os dados publicados no broker 'data' e renderiza-os no front-end
 client.on('message', (topic, message) => {
-    console.log(message.toString());
+    readingValues.innerHTML = message.toString();
 });
 
 //A fazer

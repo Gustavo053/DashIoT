@@ -132,6 +132,16 @@
     border-color: #ffffff;
 }
 
+#values {
+    text-align: center;
+    color: #ffffff;
+    width: 30%;
+    background-color: var(--color-quaternary);
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
 p {
     color: #3D3D3D;
     margin-top: 30px;
