@@ -1,22 +1,30 @@
 require 'rubygems'
 require 'arduino_firmata'
+require 'mqtt'
 
 #path C:\Ruby27-x64\lib\ruby\gems\2.7.0\gems\arduino_firmata-0.3.7
 
 #recebe a porta, o pino de leitura e escrita através do ARGV.
-portUSB, readPin, writePin = ARGV
+readPin, writePin, channelFw, resolutionFw, portUSB, broker, database = ARGV
 
-readPin = readPin.to_i #Converte a string para inteiro
-writePin = writePin.to_i #Converte a string para inteiro
+#Converte os dados para inteiro
+readPin = readPin.to_i
+writePin = writePin.to_i
+channelFw = channelFw.to_i
+resolutionFw = resolutionFw.to_i
 
 esp32 = ArduinoFirmata.connect portUSB #escolher a sua porta (linux ou windows)
 
+#conexão com o broker mqtt
+mqtt_url = broker
+client = MQTT::Client.connect(mqtt_url, client_id: 'Electron application')
+
 rawV = 0 #inicializacao
 dataFwToHw = []
-resolution = 12 #ESP32 [1,16] 0..4095 - freqMax = 19,5 kHz
+resolution = resolutionFw #ESP32 [1,16] 0..4095 - freqMax = 19,5 kHz
 pinToWrite  = writePin
 pinToRead  = readPin
-channel = 0 #ESP32 [0,16] - ver pinout esp32, mas qualquer pino digital é PWM também
+channel = channelFw #ESP32 [0,16] - ver pinout esp32, mas qualquer pino digital é PWM também
 freq = 15 #ESP32 [1, 40 Mhz] - Colocar valor / 1000 pois é multiplicado no .cpp por 1.000
 #a freq maxima do pwm se baseia no clock de 80 MHz e eh limitada pela resolucao escolhida
 #o calculo eh clock/resolucao = fmax, logo, para 8 bits (256), faz-se 80.000.000/256=312,5kHz
@@ -36,6 +44,10 @@ esp32.on :sysex do |command, data|
               dataHwToFw += data[i]
           end
       end
+
+      #publica os valores no broker
+      client.publish('data', dataHwToFw)
+
       rawV = dataHwToFw # o que recebeu do HW (a leitura em si)
       puts rawV
 

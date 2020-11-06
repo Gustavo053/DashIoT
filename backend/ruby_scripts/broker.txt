@@ -1,0 +1,7 @@
+
+A lib do ruby dá um problema ao mapear o localhost para o ip da máquina, portanto é necessário
+passar somente o ip puro do localhost, sem a porta.
+'127.0.0.1'
+
+Caso haja erro, mande o ip localhost puro e o próprio nome localhost juntamente com a porta.
+'127.0.0.1 localhost:1883'

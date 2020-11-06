@@ -72,9 +72,9 @@ document.getElementById('enviar').addEventListener('click', (event) => {
                 broker = '';
             }
 
-            let data = scriptRubyAnalog + ' ' + readPin + ' ' + port + ' ' + database + ' ' + broker;
+            let data = scriptRubyAnalog + ' ' + readPin + ' ' + port + ' ' + broker + ' ' + database;
             console.log(data);
-            // envioMsg(data);
+            envioMsg(data);
         } else if (execAction == 'write') {
             let writePin = document.getElementById('pinWriteAnalog').value;
             let value = document.getElementById('value').value;
@@ -105,9 +105,9 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             if ((!value || value == 'undefined' || value == null) || (writePin == 'undefined' || writePin == null)) {
                 alert('It is necessary to pass a value');
             } else {
-                let data = scriptRubyAnalog + ' ' + writePin + ' ' + value + ' ' + channel1 + ' ' + resolution1 + ' ' + port + ' ' + database + ' ' + broker;
+                let data = scriptRubyAnalog + ' ' + writePin + ' ' + value + ' ' + channel1 + ' ' + resolution1 + ' ' + port + ' ' + broker + ' ' + database;
                 console.log(data);
-                // envioMsg(data);
+                envioMsg(data);
             }
         } else if (execAction == 'readAndWrite') {
             let readPin = document.getElementById('pinReadWriteAnalog1').value;
@@ -130,16 +130,16 @@ document.getElementById('enviar').addEventListener('click', (event) => {
 
             //validação da resolução
             if (!resolution2 || resolution2 == 'undefined' || resolution2 == null) {
-                resolution2 = '10';
+                resolution2 = '12';
             }
 
             if ((readPin == 'undefined' || readPin == null) || (writePin == 'undefined' || writePin == null)) {
                 alert('It is necessary to pass the pins');
             } else {
                 console.log(database);
-                let data = scriptRubyAnalog + ' ' + readPin + ' ' + writePin + ' ' + channel2 + ' ' + resolution2 + ' ' + port + ' ' + database + ' ' + broker;
+                let data = scriptRubyAnalog + ' ' + readPin + ' ' + writePin + ' ' + channel2 + ' ' + resolution2 + ' ' + port + ' ' + broker + ' ' + database;
                 console.log(data);
-                // envioMsg(data);
+                envioMsg(data);
             }
         }
     } else if (action == 'digital') {
@@ -154,9 +154,9 @@ document.getElementById('enviar').addEventListener('click', (event) => {
                 broker = '';
             }
 
-            let data = scriptRubyDigital + ' ' + readPin + ' ' + port + ' ' + database + ' ' + broker;
+            let data = scriptRubyDigital + ' ' + readPin + ' ' + port + ' ' + broker + ' ' + database;
             console.log(data);
-            // envioMsg(data); do usuário
+            envioMsg(data);
         } else if (execAction == 'write') {
             let writePin = document.getElementById('pinWriteDigital').value;
 
@@ -168,9 +168,9 @@ document.getElementById('enviar').addEventListener('click', (event) => {
                 broker = '';
             }
 
-            let data = scriptRubyDigital + ' ' + writePin + ' ' + writeDigitalValue + ' ' + port + ' ' + database + ' ' + broker;
+            let data = scriptRubyDigital + ' ' + writePin + ' ' + writeDigitalValue + ' ' + port + ' ' + broker + ' ' + database;
             console.log(data);
-            // envioMsg(data);
+            envioMsg(data);
         } else if (execAction == 'readAndWrite') {
             let readPin = document.getElementById('pinReadWriteDigital1').value;
             let writePin = document.getElementById('pinReadWriteDigital2').value;
@@ -183,9 +183,9 @@ document.getElementById('enviar').addEventListener('click', (event) => {
                 broker = '';
             }
 
-            let data = scriptRubyDigital + ' ' + readPin + ' ' + writePin + ' ' + port + ' ' + database + ' ' + broker;
+            let data = scriptRubyDigital + ' ' + readPin + ' ' + writePin + ' ' + port + ' ' + broker + ' ' + database;
             console.log(data);
-            // envioMsg(data);
+            envioMsg(data);
         }
     }
 });
