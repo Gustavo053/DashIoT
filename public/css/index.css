@@ -31,11 +31,18 @@
     text-align: center;
     display: flex;
     margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     grid-gap: 10px;
 }
 
 .select-action-2 {
+    text-align: center;
+    display: flex;
+    margin-top: 10px;
+    grid-gap: 10px;
+}
+
+.margin-bottom-50 {
     margin-bottom: 50px;
 }
 

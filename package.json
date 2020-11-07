@@ -10,6 +10,7 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
+    "chart.js": "^2.9.4",
     "electron": "^10.1.5",
     "mongoose": "^5.10.11",
     "mqtt": "^4.2.4"
