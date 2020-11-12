@@ -21,8 +21,11 @@ ipcMain.on('send-message', (event, data) => {
 
         return;
     }
-    //executado o data (comandos) que o usuário enviou
-    const operation = exec(data, (err, stdout, stderr) => {
+
+    //executa o data (comandos) que o usuário enviou
+    //é passado, através de um objeto, a propriedade maxBuffer. Essa propriedade aumenta
+    //o buffer do stdout em, aproximadamente, 5MB. (1024 * 5000)
+    const operation = exec(data, { maxBuffer: 1024 * 5000 }, (err, stdout, stderr) => {
         if (err) {
             console.log(err);
             return;

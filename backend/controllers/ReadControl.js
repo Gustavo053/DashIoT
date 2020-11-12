@@ -1,4 +1,3 @@
-// const electron = require('electron');
 const mqtt = require('mqtt');
 let readingValues = document.getElementById('values');
 

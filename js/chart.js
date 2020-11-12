@@ -5,14 +5,15 @@ const client = mqtt.connect('mqtt://localhost:1883');
 
 let ctx = document.getElementById('myChart');
 
+//Cria um novo gráfico com valores zerados
 let myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['none', 'none', 'none', 'reading'],
+        labels: [],
         datasets: [{
             label: 'Reading graph',
-            data: [0, 0, 0, 0],
-            borderWidth: 5,
+            data: [],
+            borderWidth: 1,
             borderColor: '#AF6FC6',
             backgroundColor: 'transparent'
         }]
@@ -41,16 +42,23 @@ client.on('connect', () => {
     });
 });
 
-//recebe os dados publicados no broker 'data' e renderiza-os no front-end
+//recebe os dados publicados no broker 'data' e vai plotando no gráfico
 client.on('message', (topic, message) => {
     let dataPloting = parseInt(message.toString());
 
     //retira o último elemento do array de dados
-    myChart.data.datasets[0].data.pop();
+    myChart.data.labels.push('reading');
 
     //adiciona a leitura no final do array de dados
     myChart.data.datasets[0].data.push(dataPloting);
 
     //atualiza o gráfico
     myChart.update();
+
+    //remove os primeiros índices do gráfico
+    //para não travar a renderização do gráfico devido ao limite alto de dados
+    setTimeout(() => {
+        myChart.data.labels.shift();
+        myChart.data.datasets[0].data.shift();
+    }, 5000);
 });

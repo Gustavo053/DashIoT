@@ -7,6 +7,12 @@ let scriptRubyDigital;
 //variável de leitura HIGH or LOW da escrita digital
 let writeDigitalValue;
 
+
+function envioMsg(data) {
+    //envia uma mensagem através do canal send-message para o backend, enviando o dado de execução
+    ipcRenderer.send('send-message', data);
+}
+
 function readValues() {
     let valueTypeAction = document.querySelectorAll('.bt-standard-select');
     valueTypeAction.forEach(element => {
@@ -83,7 +89,7 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             console.log(channel1);
             let resolution1 = document.getElementById('resolution1').value;
 
-            if (database == undefined || database == null) {
+            if (!database || database == undefined || database == null) {
                 database = '';
             }
 
@@ -115,7 +121,7 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             let channel2 = document.getElementById('channel2').value;
             let resolution2 = document.getElementById('resolution2').value;
 
-            if (database == undefined || database == null) {
+            if (!database || database == undefined || database == null) {
                 database = '';
             }
 
@@ -146,7 +152,7 @@ document.getElementById('enviar').addEventListener('click', (event) => {
         if (execAction == 'read') {
             let readPin = document.getElementById('pinReadDigital').value;
 
-            if (database == undefined || database == null) {
+            if (!database || database == undefined || database == null) {
                 database = '';
             }
 
@@ -160,7 +166,7 @@ document.getElementById('enviar').addEventListener('click', (event) => {
         } else if (execAction == 'write') {
             let writePin = document.getElementById('pinWriteDigital').value;
 
-            if (database == undefined || database == null) {
+            if (!database || database == undefined || database == null) {
                 database = '';
             }
 
@@ -175,7 +181,7 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             let readPin = document.getElementById('pinReadWriteDigital1').value;
             let writePin = document.getElementById('pinReadWriteDigital2').value;
 
-            if (database == undefined || database == null) {
+            if (!database || database == undefined || database == null) {
                 database = '';
             }
 
@@ -188,6 +194,12 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             envioMsg(data);
         }
     }
+
+    //desativa o botão para que o usuário não possa apertar novamente até parar a execução atual
+    let buttonSubmit = document.querySelector('#enviar')
+
+    buttonSubmit.style.backgroundColor = 'gray';
+    buttonSubmit.setAttribute('disabled', true);
 });
 
 //Esse código pega o evento de click do botão parar, restaura o comportamento e 
@@ -195,14 +207,11 @@ document.getElementById('enviar').addEventListener('click', (event) => {
 document.getElementById('parar').addEventListener('click', (event) => {
     event.preventDefault();
     envioMsg('^C');
+
+
+    //quando o usuário para a execução, ele ativa novamente o botão
+    let buttonSubmit = document.querySelector('#enviar');
+
+    buttonSubmit.style.backgroundColor = '#6CE569';
+    buttonSubmit.removeAttribute('disabled');
 });
-
-function envioMsg(data) {
-    //envia uma mensagem através do canal send-message para o backend, enviando o dado de execução
-    ipcRenderer.send('send-message', data);
-}
-
-function parar(data) {
-    //envia uma mensagem através do canal send-message para o backend, mandando parar a execução
-    ipcRenderer.send('send-message', data);
-}
