@@ -1,9 +1,21 @@
 const Chart = require('chart.js');
 const mqtt = require('mqtt');
+const { ipcRenderer } = require('electron');
+
+let readValueMax = 0;
 
 const client = mqtt.connect('mqtt://localhost:1883');
 
 let ctx = document.getElementById('myChart');
+
+ipcRenderer.on('plot-data', (event, data) => {
+    console.log(data);
+    if (data == 'analog') {
+        readValueMax = 1023;
+    } else if (data == 'digital') {
+        readValueMax = 1;
+    }
+});
 
 //Cria um novo gráfico com valores zerados
 let myChart = new Chart(ctx, {
@@ -25,7 +37,7 @@ let myChart = new Chart(ctx, {
             yAxes: [{
                 ticks: {
                     beginAtZero: true,
-                    suggestedMax: 1023,
+                    suggestedMax: readValueMax,
                     suggestedMin: 0
                 }
             }]

@@ -11,6 +11,7 @@ let writeDigitalValue;
 function envioMsg(data) {
     //envia uma mensagem através do canal send-message para o backend, enviando o dado de execução
     ipcRenderer.send('send-message', data);
+    ipcRenderer.send('plot-data', action);
 }
 
 function readValues() {

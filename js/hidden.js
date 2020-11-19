@@ -18,7 +18,7 @@ let typeAction;
 buttonsTypeAction.forEach(element => {
     element.addEventListener('click', () => {
         typeAction = element.getAttribute('typeAction');
-        console.log(typeAction);
+        // console.log(typeAction);
 
         //de acordo com a escolha, o campo de escrita é modificado
         //se for digital, entao write. Se for analog, entao pwm output
@@ -65,8 +65,7 @@ buttons.forEach(buttom => {
                 analogWrite.style.display = 'none';
                 analogReadWrite.style.display = 'block';
             } else if (hiddenRender == 'plot') {
-                //configurações para fazer animações enquanto os dados são plotados
-                console.log('plotando os dados');
+                // console.log('plotando os dados');
             } else {
                 alert('Error selecting action for execution');
             }
@@ -87,8 +86,7 @@ buttons.forEach(buttom => {
                 digitalWrite.style.display = 'none';
                 digitalReadWrite.style.display = 'block';
             } else if (hiddenRender == 'plot') {
-                //configurações para fazer animações enquanto os dados são plotados
-                console.log('plotando os dados');
+                // console.log('plotando os dados');
             } else {
                 alert('Error selecting action for execution');
             }
