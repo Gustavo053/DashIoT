@@ -16,6 +16,9 @@ ipcMain.on('send-message', (event, data) => {
             exec('kill -9 ' + (pid + 1));
         });
 
+        //após finalizar a execução em background, remove o pid do array
+        operations.pop();
+
         //Envia uma resposta para o front-end, indicando que foi executado
         // event.reply('send-response', 'executado');
 
