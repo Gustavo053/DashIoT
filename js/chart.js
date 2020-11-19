@@ -8,6 +8,7 @@ const client = mqtt.connect('mqtt://localhost:1883');
 
 let ctx = document.getElementById('myChart');
 
+//recebe qual foi a escolha do usuário para renderizar o gráfico corretamente
 ipcRenderer.on('plot-data', (event, data) => {
     console.log(data);
     if (data == 'analog') {
