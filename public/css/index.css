@@ -75,7 +75,7 @@
     display: none;
     background-color: var(--color-quaternary);
     border-radius: var(--radius);
-    color: #ffffff;
+    color: var(--color-tertiary);
     height: 20%;
     margin-bottom: 50px;
 }
@@ -84,20 +84,20 @@
     display: none;
     background-color: var(--color-quaternary);
     border-radius: var(--radius);
-    color: #ffffff;
+    color: var(--color-tertiary);
     height: 33%;
     margin-bottom: 50px;
 }
 
 .digitalWrite .bt-standard {
-    border-color: #ffffff;
+    border-color: var(--color-tertiary);
 }
 
 .digitalReadWrite {
     display: none;
     background-color: var(--color-quaternary);
     border-radius: var(--radius);
-    color: #ffffff;
+    color: var(--color-tertiary);
     height: 34%;
     margin-bottom: 50px;
 }
@@ -108,7 +108,7 @@
     display: none;
     background-color: var(--color-quaternary);
     border-radius: var(--radius);
-    color: #ffffff;
+    color: var(--color-tertiary);
     height: 20%;
     margin-bottom: 50px;
 }
@@ -117,7 +117,7 @@
     display: none;
     background-color: var(--color-quaternary);
     border-radius: var(--radius);
-    color: #ffffff;
+    color: var(--color-tertiary);
     height: 61%;
     margin-bottom: 50px;
 }
@@ -126,22 +126,22 @@
     display: none;
     background-color: var(--color-quaternary);
     border-radius: var(--radius);
-    color: #ffffff;
+    color: var(--color-tertiary);
     height: 61%;
     margin-bottom: 50px;
 }
 
 .analogReadWrite input {
-    border-color: #ffffff;
+    border-color: var(--color-tertiary);
 }
 
 .analogWrite input {
-    border-color: #ffffff;
+    border-color: var(--color-tertiary);
 }
 
 #values {
     text-align: center;
-    color: #ffffff;
+    color: var(--color-tertiary);
     width: 30%;
     background-color: var(--color-quaternary);
     border-radius: var(--radius);
@@ -157,4 +157,16 @@ p {
 
 a {
     text-decoration: none;
+}
+
+.analogWrite .input-standard {
+    border-width: 1px;
+}
+
+.analogReadWrite .input-standard {
+    border-width: 1px;
+}
+
+.digitalWrite .bt-standard {
+    border-width: 1px;
 }

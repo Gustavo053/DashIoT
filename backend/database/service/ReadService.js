@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
-const ReadSchema = require('../models/ReadSchema');
+const Read = require('../models/ReadSchema');
 const { ipcMain } = require('electron');
+let addresToDatabase = '';
+
+//listenner do canal addres-to-database
+//recebe o endereço do banco de dados, caso tenha sido enviado pelo usuário
+ipcMain.on('addres-to-database', (event, data) => {
+    console.log('entrei no addres');
+    addresToDatabase = data;
+});
 
 //conexão com o bando de dados
 mongoose.connect('mongodb://localhost/readings', {
@@ -12,7 +20,5 @@ mongoose.connect('mongodb://localhost/readings', {
     console.log(err);
 });
 
-//listenner do canal data-persistence
-//recebe os dados enviados do frontend e envia para a camada de serviço
 ipcMain.on('data-persistence', (event, data) => {
 });
