@@ -27,7 +27,7 @@ let myChart = new Chart(ctx, {
             label: 'Reading graph',
             data: [],
             borderWidth: 1,
-            borderColor: '#AF6FC6',
+            borderColor: '#5586B2',
             backgroundColor: 'transparent'
         }]
     },
