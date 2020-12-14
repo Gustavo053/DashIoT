@@ -54,3 +54,7 @@ body {
 .color-tertiary {
     color: var(--color-tertiary);
 }
+
+.required {
+    color: var(--color-tertiary);
+}

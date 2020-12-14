@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require('electron');
+const path = require('path');
 require('./backend/background');
-
 
 function createWindow() {
     //Cria uma janela de navegação
@@ -8,6 +8,7 @@ function createWindow() {
         width: 1080,
         height: 720,
         title: 'Dashboard',
+        icon: path.join(__dirname, 'public/img/Loading-page.svg'),
         webPreferences: {
             nodeIntegration: true
         }

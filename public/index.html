@@ -26,14 +26,16 @@
                         Values
                     </div>
                     <br />
-                    <label class="label" for="">Select type:</label>
+                    <label class="label" for="">Select type </label>
+                    <label class="required" for="">(required):</label>
                     <br />
                     <div class="select-type">
                         <button typeAction="analog" class="bt-standard bt-standard-select">Analog</button>
                         <button typeAction="digital" class="bt-standard bt-standard-select">Digital</button>
                     </div>
                 </div>
-                <label class="label" for="">Port:</label>
+                <label class="label" for="">Port </label>
+                <label class="required" for="">(required):</label>
                 <br />
                 <div>
                     <input required id="port" class="input-standard input-text-config" placeholder="Insert the port"
@@ -45,13 +47,15 @@
                     <input id="database" class="input-standard input-text-config" placeholder="Insert the firebase link"
                         type="text" />
                 </div>
-                <label class="label" for="">Broker MQTT:</label>
+                <label class="label" for="">Broker MQTT </label>
+                <label class="required" for="">(required):</label>
                 <br />
                 <div>
                     <input id="broker" class="input-standard input-text-config"
                         placeholder="Insert the link broker MQTT" type="text" />
                 </div>
-                <label class="label" for="">Select what you want:</label>
+                <label class="label" for="">Select what you want </label>
+                <label class="required" for="">(required):</label>
                 <br />
                 <div>
                     <div class="select-action-1">
@@ -73,7 +77,8 @@
                 <div class="digitalRead">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select pin to read:</label>
+                            <label for="">Select pin to read </label>
+                            <label class="required" for="">(required):</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadDigital" id="pinReadDigital">
@@ -112,7 +117,8 @@
                 <div class="digitalWrite">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select pin to write:</label>
+                            <label for="">Select pin to write </label>
+                            <label class="required" for="">(required):</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinWriteDigital" id="pinWriteDigital">
@@ -146,7 +152,8 @@
                                 </select>
                             </div>
                             <div class="padding-top-10">
-                                <label for="">Select value:</label>
+                                <label for="">Select value </label>
+                                <label class="required" for="">(required):</label>
                                 <div class="select-type">
                                     <button data-value="1" class="bt-standard bt-digital-value">HIGH</button>
                                     <button data-value="0" class="bt-standard bt-digital-value">LOW</button>
@@ -158,7 +165,8 @@
                 <div class="digitalReadWrite">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select pin to read:</label>
+                            <label for="">Select pin to read </label>
+                            <label class="required" for="">(required):</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadWriteDigital1" id="pinReadWriteDigital1">
@@ -185,7 +193,8 @@
                             </div>
                         </div>
                         <div class="padding-top-10">
-                            <label for="">Select pin to write:</label>
+                            <label for="">Select pin to write </label>
+                            <label class="required" for="">(required):</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadWriteDigital2" id="pinReadWriteDigital2">
@@ -216,7 +225,8 @@
                 <div class="analogRead">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select pin to read:</label>
+                            <label for="">Select pin to read </label>
+                            <label class="required" for="">(required):</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadAnalog" id="pinReadAnalog">
@@ -236,7 +246,8 @@
                 <div class="analogWrite">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select pin to write:</label>
+                            <label for="">Select pin to write </label>
+                            <label class="required" for="">(required):</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinWriteAnalog" id="pinWriteAnalog">
@@ -265,15 +276,15 @@
                         </div>
                         <div class="padding-top-10">
                             <label for="">Channel:</label>
-                            <input id="channel1" placeholder="Insert the channel" class="input-standard" type="text" />
+                            <input id="channel1" placeholder="0" class="input-standard" type="text" />
                         </div>
                         <div class="padding-top-10">
                             <label for="">Resolution:</label>
-                            <input id="resolution1" placeholder="Insert the resolution" class="input-standard"
-                                type="text" />
+                            <input id="resolution1" placeholder="10" class="input-standard" type="text" />
                         </div>
                         <div class="padding-top-10">
-                            <label for="">Value:</label>
+                            <label for="">Value </label>
+                            <label class="required" for="">(required):</label>
                             <input required id="value" placeholder="Insert the value" class="input-standard"
                                 type="number" />
                         </div>
@@ -282,7 +293,8 @@
                 <div class="analogReadWrite">
                     <div class="container-2">
                         <div class="padding-top-10">
-                            <label for="">Select pin to read:</label>
+                            <label for="">Select pin to read </label>
+                            <label class="required" for="">(required):</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadWriteAnalog1" id="pinReadWriteAnalog1">
@@ -298,7 +310,8 @@
                             </div>
                         </div>
                         <div class="padding-top-10">
-                            <label for="">Select pin to write:</label>
+                            <label for="">Select pin to write </label>
+                            <label class="required" for="">(required):</label>
                             <br />
                             <div class="custom-select">
                                 <select name="pinReadWriteAnalog2" id="pinReadWriteAnalog2">
@@ -327,12 +340,11 @@
                         </div>
                         <div class="padding-top-10">
                             <label for="">Channel:</label>
-                            <input id="channel2" placeholder="Insert the channel" class="input-standard" type="text" />
+                            <input id="channel2" placeholder="0" class="input-standard" type="text" />
                         </div>
                         <div class="padding-top-10">
                             <label for="">Resolution:</label>
-                            <input id="resolution2" placeholder="Insert the resolution" class="input-standard"
-                                type="text" />
+                            <input id="resolution2" placeholder="10" class="input-standard" type="text" />
                         </div>
                     </div>
                 </div>
