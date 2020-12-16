@@ -1,6 +1,7 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 require('./backend/background');
+require('./backend/database/persistence')
 
 function createWindow() {
     //Cria uma janela de navegação

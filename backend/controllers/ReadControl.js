@@ -1,6 +1,5 @@
 const mqtt = require('mqtt');
 let readingValues = document.getElementById('values');
-const ipcRendererPlot = require('electron').ipcRenderer;
 
 const client = mqtt.connect('mqtt://localhost:1883');
 
@@ -16,8 +15,4 @@ client.on('connect', () => {
 //recebe os dados publicados no broker 'data' e renderiza-os no front-end
 client.on('message', (topic, message) => {
     readingValues.innerHTML = message.toString();
-    ipcRendererPlot.send('data-persistence', parseInt(message.toString()));
 });
-
-//A fazer
-//Pegar os dados de leitura do front-end enviar para o banco de dados

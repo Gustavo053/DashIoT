@@ -17,6 +17,10 @@ function envioMsg(data) {
     ipcRenderer.send('addres-to-database', database);
 }
 
+function persistence(command) {
+    ipcRenderer.send('data-persistence', command);
+}
+
 function readValues() {
     let valueTypeAction = document.querySelectorAll('.bt-standard-select');
     valueTypeAction.forEach(element => {
@@ -201,10 +205,28 @@ document.getElementById('enviar').addEventListener('click', (event) => {
     }
 
     //desativa o botão para que o usuário não possa apertar novamente até parar a execução atual
-    let buttonSubmit = document.querySelector('#enviar')
+    let buttonSubmit = document.querySelector('#enviar');
 
     buttonSubmit.style.backgroundColor = 'gray';
     buttonSubmit.setAttribute('disabled', true);
+});
+
+document.getElementById('start').addEventListener('click', event => {
+    event.preventDefault();
+    persistence('start');
+
+    let buttonStart = document.querySelector('#start');
+    buttonStart.style.backgroundColor = 'gray';
+    buttonStart.setAttribute('disabled', true);
+});
+
+document.getElementById('stop').addEventListener('click', event => {
+    event.preventDefault();
+    persistence('stop');
+
+    let buttonStart = document.querySelector('#start');
+    buttonStart.style.backgroundColor = 'transparent';
+    buttonStart.removeAttribute('disabled');
 });
 
 //Esse código pega o evento de click do botão parar, restaura o comportamento e 

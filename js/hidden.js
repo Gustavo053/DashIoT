@@ -66,6 +66,8 @@ buttons.forEach(buttom => {
                 analogReadWrite.style.display = 'block';
             } else if (hiddenRender == 'plot') {
                 // console.log('plotando os dados');
+            } else if (hiddenRender == 'database') {
+                // console.log('salvando dados');
             } else {
                 alert('Error selecting action for execution');
             }
@@ -87,6 +89,8 @@ buttons.forEach(buttom => {
                 digitalReadWrite.style.display = 'block';
             } else if (hiddenRender == 'plot') {
                 // console.log('plotando os dados');
+            } else if (hiddenRender == 'database') {
+                // console.log('salvando dados');
             } else {
                 alert('Error selecting action for execution');
             }
