@@ -55,12 +55,13 @@ client.on('connect', () => {
     });
 });
 
+let xAxis = 0;
 //recebe os dados publicados no broker 'data' e vai plotando no gráfico
 client.on('message', (topic, message) => {
     let dataPloting = parseInt(message.toString());
 
     //retira o último elemento do array de dados
-    myChart.data.labels.push('reading');
+    myChart.data.labels.push(xAxis++);
 
     //adiciona a leitura no final do array de dados
     myChart.data.datasets[0].data.push(dataPloting);

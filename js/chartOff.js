@@ -12,7 +12,7 @@ let labelsArray = [];
 
 let i = 0;
 while (i < dataArray.length) {
-    labelsArray[i] = 'Reading';
+    labelsArray[i] = i;
     i++;
 }
 

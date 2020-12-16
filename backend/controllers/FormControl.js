@@ -117,8 +117,9 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             }
 
             //validação se os valores não vieram null
-            if ((!value || typeof value == undefined || value == null) || (typeof writePin == undefined || writePin == null)) {
-                alert('It is necessary to pass a value');
+            if ((!value || typeof value == undefined || value == null || value > 1023) || (!writePin || typeof writePin == undefined || writePin == null)) {
+                alert('It is necessary to pass a value (max 1023) and write pin');
+                return;
             } else {
                 let data = scriptRubyAnalog + ' ' + writePin + ' ' + value + ' ' + channel1 + ' ' + resolution1 + ' ' + port + ' ' + broker + ' ' + database;
                 console.log(data);
