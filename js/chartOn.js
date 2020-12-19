@@ -56,11 +56,14 @@ client.on('connect', () => {
 });
 
 let xAxis = 0;
+// let start;
+// let end;
 //recebe os dados publicados no broker 'data' e vai plotando no gráfico
 client.on('message', (topic, message) => {
     let dataPloting = parseInt(message.toString());
 
-    //retira o último elemento do array de dados
+    // start = performance.now(); //start breakpoint
+    //Adiciona o label da nova leitura ao gráfico
     myChart.data.labels.push(xAxis++);
 
     //adiciona a leitura no final do array de dados
@@ -68,9 +71,12 @@ client.on('message', (topic, message) => {
 
     //atualiza o gráfico
     myChart.update();
+    // end = performance.now() - start; //end point
+
+    // console.log(end);
 
     //remove os primeiros índices do gráfico
-    //para não travar a renderização do gráfico devido ao limite alto de dados
+    //pra não travar a renderização do gráfico devido ao limite alto de dados
     setTimeout(() => {
         myChart.data.labels.shift();
         myChart.data.datasets[0].data.shift();

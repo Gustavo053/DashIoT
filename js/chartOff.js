@@ -1,8 +1,20 @@
 const Chart = require('chart.js');
+const { ipcRenderer } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
 const ctx = document.getElementById('myChart');
+
+let readValueMax = 0;
+
+ipcRenderer.on('plot-data', (event, data) => {
+    if (data == 'analog') {
+        readValueMax = 1023;
+    } else if (data == 'digital') {
+        readValueMax = 1;
+    }
+});
+
 
 const datas = fs.readFileSync(path.join(__dirname, '../backend/database/datas.csv'));
 const processedData = datas.toString();
@@ -35,7 +47,7 @@ const myChart = new Chart(ctx, {
             yAxes: [{
                 ticks: {
                     beginAtZero: true,
-                    suggestedMax: 1023,
+                    suggestedMax: readValueMax,
                     suggestedMin: 0
                 }
             }]
