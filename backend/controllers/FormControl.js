@@ -6,7 +6,6 @@ let scriptRubyAnalog;
 let scriptRubyDigital;
 //variável de leitura HIGH or LOW da escrita digital
 let writeDigitalValue;
-let database = document.getElementById('database').value;
 
 
 function envioMsg(data) {
@@ -14,7 +13,6 @@ function envioMsg(data) {
     ipcRenderer.send('send-message', data);
     //envia uma mensagem através do canal plot-action para o backend, enviando o tipo de plotagem
     ipcRenderer.send('plot-data', action);
-    ipcRenderer.send('addres-to-database', database);
 }
 
 function persistence(command) {
@@ -79,15 +77,12 @@ document.getElementById('enviar').addEventListener('click', (event) => {
     if (action == 'analog') {
         if (execAction == 'read') {
             let readPin = document.getElementById('pinReadAnalog').value;
-            if (!database || typeof database == undefined || database == null) {
-                database = '';
-            }
 
             if (!broker || typeof broker == undefined || broker == null) {
                 broker = '';
             }
 
-            let data = scriptRubyAnalog + ' ' + readPin + ' ' + port + ' ' + broker + ' ' + database;
+            let data = scriptRubyAnalog + ' ' + readPin + ' ' + port + ' ' + broker;
             console.log(data);
             envioMsg(data);
         } else if (execAction == 'write') {
@@ -97,10 +92,6 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             console.log(value);
             console.log(channel1);
             let resolution1 = document.getElementById('resolution1').value;
-
-            if (!database || typeof database == undefined || database == null) {
-                database = '';
-            }
 
             if (!broker || typeof broker == undefined || broker == null) {
                 broker = '';
@@ -121,7 +112,7 @@ document.getElementById('enviar').addEventListener('click', (event) => {
                 alert('It is necessary to pass a value (max 1023) and write pin');
                 return;
             } else {
-                let data = scriptRubyAnalog + ' ' + writePin + ' ' + value + ' ' + channel1 + ' ' + resolution1 + ' ' + port + ' ' + broker + ' ' + database;
+                let data = scriptRubyAnalog + ' ' + writePin + ' ' + value + ' ' + channel1 + ' ' + resolution1 + ' ' + port + ' ' + broker;
                 console.log(data);
                 envioMsg(data);
             }
@@ -130,10 +121,6 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             let writePin = document.getElementById('pinReadWriteAnalog2').value;
             let channel2 = document.getElementById('channel2').value;
             let resolution2 = document.getElementById('resolution2').value;
-
-            if (!database || typeof database == undefined || database == null) {
-                database = '';
-            }
 
             if (!broker || typeof broker == undefined || broker == null) {
                 broker = '';
@@ -152,8 +139,7 @@ document.getElementById('enviar').addEventListener('click', (event) => {
             if ((typeof readPin == undefined || readPin == null) || (typeof writePin == undefined || writePin == null)) {
                 alert('It is necessary to pass the pins');
             } else {
-                console.log(database);
-                let data = scriptRubyAnalog + ' ' + readPin + ' ' + writePin + ' ' + channel2 + ' ' + resolution2 + ' ' + port + ' ' + broker + ' ' + database;
+                let data = scriptRubyAnalog + ' ' + readPin + ' ' + writePin + ' ' + channel2 + ' ' + resolution2 + ' ' + port + ' ' + broker;
                 console.log(data);
                 envioMsg(data);
             }
@@ -162,44 +148,32 @@ document.getElementById('enviar').addEventListener('click', (event) => {
         if (execAction == 'read') {
             let readPin = document.getElementById('pinReadDigital').value;
 
-            if (!database || typeof database == undefined || database == null) {
-                database = '';
-            }
-
             if (!broker || typeof broker == undefined || broker == null) {
                 broker = '';
             }
 
-            let data = scriptRubyDigital + ' ' + readPin + ' ' + port + ' ' + broker + ' ' + database;
+            let data = scriptRubyDigital + ' ' + readPin + ' ' + port + ' ' + broker;
             console.log(data);
             envioMsg(data);
         } else if (execAction == 'write') {
             let writePin = document.getElementById('pinWriteDigital').value;
 
-            if (!database || typeof database == undefined || database == null) {
-                database = '';
-            }
-
             if (!broker || typeof broker == undefined || broker == null) {
                 broker = '';
             }
 
-            let data = scriptRubyDigital + ' ' + writePin + ' ' + writeDigitalValue + ' ' + port + ' ' + broker + ' ' + database;
+            let data = scriptRubyDigital + ' ' + writePin + ' ' + writeDigitalValue + ' ' + port + ' ' + broker;
             console.log(data);
             envioMsg(data);
         } else if (execAction == 'readAndWrite') {
             let readPin = document.getElementById('pinReadWriteDigital1').value;
             let writePin = document.getElementById('pinReadWriteDigital2').value;
 
-            if (!database || typeof database == undefined || database == null) {
-                database = '';
-            }
-
             if (!broker || typeof broker == undefined || broker == null) {
                 broker = '';
             }
 
-            let data = scriptRubyDigital + ' ' + readPin + ' ' + writePin + ' ' + port + ' ' + broker + ' ' + database;
+            let data = scriptRubyDigital + ' ' + readPin + ' ' + writePin + ' ' + port + ' ' + broker;
             console.log(data);
             envioMsg(data);
         }
