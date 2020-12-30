@@ -27,6 +27,16 @@ body {
     justify-content: space-between;
 }
 
+#footer {
+    margin-top: 50px;
+}
+
+#logo {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .title-main {
     text-align: left;
     font-size: 50px;
