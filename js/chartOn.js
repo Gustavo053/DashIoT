@@ -60,9 +60,9 @@ let xAxis = 0;
 // let end;
 //recebe os dados publicados no broker 'data' e vai plotando no gráfico
 client.on('message', (topic, message) => {
+    // start = performance.now(); //start breakpoint
     let dataPloting = parseInt(message.toString());
 
-    // start = performance.now(); //start breakpoint
     //Adiciona o label da nova leitura ao gráfico
     myChart.data.labels.push(xAxis++);
 
