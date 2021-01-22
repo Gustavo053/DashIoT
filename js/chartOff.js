@@ -20,13 +20,9 @@ const datas = fs.readFileSync(path.join(__dirname, '../backend/database/datas.cs
 const processedData = datas.toString();
 const dataArray = processedData.split('\n');
 
-let labelsArray = [];
-
-let i = 0;
-while (i < dataArray.length) {
-    labelsArray[i] = i;
-    i++;
-}
+const timesTamp = fs.readFileSync(path.join(__dirname, '../backend/database/timestamp.csv'));
+const processedTimesTamp = timesTamp.toString();
+const labelsArray = processedTimesTamp.split('\n');
 
 const myChart = new Chart(ctx, {
     type: 'line',

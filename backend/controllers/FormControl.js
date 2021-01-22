@@ -19,6 +19,10 @@ function persistence(command) {
     ipcRenderer.send('data-persistence', command);
 }
 
+function clearFile(file) {
+    ipcRenderer.send('clear-file', file);
+}
+
 function readValues() {
     let valueTypeAction = document.querySelectorAll('.bt-standard-select');
     valueTypeAction.forEach(element => {
@@ -192,6 +196,7 @@ document.getElementById('start').addEventListener('click', event => {
 
     let buttonStart = document.querySelector('#start');
     buttonStart.style.backgroundColor = 'gray';
+    buttonStart.style.color = 'white';
     buttonStart.setAttribute('disabled', true);
 });
 
@@ -201,7 +206,19 @@ document.getElementById('stop').addEventListener('click', event => {
 
     let buttonStart = document.querySelector('#start');
     buttonStart.style.backgroundColor = 'transparent';
+    buttonStart.style.color = '#646464'
     buttonStart.removeAttribute('disabled');
+});
+
+document.getElementById('clearDatabase').addEventListener('click', event => {
+    event.preventDefault();
+    clearFile('datas.csv');
+
+});
+
+document.getElementById('clearCache').addEventListener('click', event => {
+    event.preventDefault();
+    clearFile('cache.csv');
 });
 
 //Esse código pega o evento de click do botão parar, restaura o comportamento e 
