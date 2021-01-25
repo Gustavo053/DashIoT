@@ -9,7 +9,7 @@ function createWindow() {
         width: 1080,
         height: 720,
         title: 'Dashboard',
-        icon: path.join(__dirname, '/public/img/ind4fibre-logo.png'),
+        icon: path.join(__dirname, '/public/img/logoSystem.png'),
         webPreferences: {
             nodeIntegration: true
         }

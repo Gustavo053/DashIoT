@@ -24,6 +24,15 @@ const timesTamp = fs.readFileSync(path.join(__dirname, '../backend/database/time
 const processedTimesTamp = timesTamp.toString();
 const labelsArray = processedTimesTamp.split('\n');
 
+let timeFinal = 0;
+let i = 0;
+while (i < labelsArray.length - 1) {
+    timeFinal += parseFloat(labelsArray[i]);
+    i++;
+}
+
+console.log(timeFinal)
+
 const myChart = new Chart(ctx, {
     type: 'line',
     data: {
