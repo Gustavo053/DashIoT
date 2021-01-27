@@ -34,13 +34,13 @@
 
 <div align="center" style="display: flex; justify-content: space-between; padding: 10px;">
     <figure>
-        <img src="./__readme/analogPlotting.gif" width="515px" />
+        <img src="./__readme/analogPlotting.gif" width="500px" />
         <figcaption align="center">
             Analog reading
         </figcaption>
     </figure>
     <figure>
-        <img src="./__readme/digitalPlotting.gif" width="515px" />
+        <img src="./__readme/digitalPlotting.gif" width="500px" />
         <figcaption align="center">
             Digital reading
         </figcaption>
@@ -51,13 +51,13 @@
 <h2> Instrumentation </h2>
 <div align="center" style="display: flex; justify-content: space-between; padding: 10px;">
     <figure>
-        <img src="./__readme/esp32.jpeg" style="display:block;" width="250px"><br />
+        <img src="./__readme/esp32.jpeg" style="display:block;" width="100px"><br />
         <figcaption align="center">
             ESP32
         </figcaption>
     </figure>
     <figure>
-        <img src="./__readme/sensors.jpeg" style="display:block;" width="250px"><br />
+        <img src="./__readme/sensors.jpeg" style="display:block;" width="100px"><br />
         <figcaption align="center">
             Sensors
         </figcaption>
