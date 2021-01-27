@@ -62,7 +62,7 @@
         <tr>
             <td>
                 <figure>
-                    <img src="./__readme/esp32.jpeg" style="display:block;" width="100px"><br />
+                    <img src="./__readme/esp32.jpeg" width="100px"><br />
                     <figcaption align="center">
                         ESP32
                     </figcaption>
@@ -70,7 +70,7 @@
             </td>
             <td>
                 <figure>
-                    <img src="./__readme/sensors.jpeg" style="display:block;" width="100px"><br />
+                    <img src="./__readme/sensors.jpeg" width="100px"><br />
                     <figcaption align="center">
                         Sensors
                     </figcaption>
@@ -129,9 +129,9 @@ $ npm install
 
 ```sh
 {
-"name": "DashIoT",
+"name": "estudo-electron",
 "version": "1.0.0",
-"description": "Dashboard for ESP32",
+"description": "Dashboard para controlar o framework arduino_firmata",
 "main": "index.js",
 "scripts": {
 "start": "electron ."
