@@ -135,7 +135,7 @@ $ npm init
 $ npm install
 ```
 
-<p>Configure</p>
+<p>Configure the package.json</p>
 
 ```sh
 {
