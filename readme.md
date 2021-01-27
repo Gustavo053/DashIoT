@@ -32,36 +32,52 @@
 
 <h2>Usage examples</h2>
 
-<div align="center" style="display: flex; justify-content: space-between; padding: 10px;">
-    <figure>
-        <img src="./__readme/analogPlotting.gif" width="500px" />
-        <figcaption align="center">
-            Analog reading
-        </figcaption>
-    </figure>
-    <figure>
-        <img src="./__readme/digitalPlotting.gif" width="500px" />
-        <figcaption align="center">
-            Digital reading
-        </figcaption>
-    </figure>
+<div align="center">
+    <table>
+        <tr>
+            <td>
+                <figure>
+                    <img src="./__readme/analogPlotting.gif" width="500px" />
+                    <figcaption align="center">
+                        Analog reading
+                    </figcaption>
+                </figure>
+            </td>
+            <td>
+                <figure>
+                    <img src="./__readme/digitalPlotting.gif" width="500px" />
+                    <figcaption align="center">
+                        Digital reading
+                    </figcaption>
+                </figure>
+            </td>
+        </tr>
+    </table>
 </div>
 
 <hr />
 <h2> Instrumentation </h2>
-<div align="center" style="display: flex; justify-content: space-between; padding: 10px;">
-    <figure>
-        <img src="./__readme/esp32.jpeg" style="display:block;" width="100px"><br />
-        <figcaption align="center">
-            ESP32
-        </figcaption>
-    </figure>
-    <figure>
-        <img src="./__readme/sensors.jpeg" style="display:block;" width="100px"><br />
-        <figcaption align="center">
-            Sensors
-        </figcaption>
-    </figure>
+<div align="center">
+    <table>
+        <tr>
+            <td>
+                <figure>
+                    <img src="./__readme/esp32.jpeg" style="display:block;" width="100px"><br />
+                    <figcaption align="center">
+                        ESP32
+                    </figcaption>
+                </figure>
+            </td>
+            <td>
+                <figure>
+                    <img src="./__readme/sensors.jpeg" style="display:block;" width="100px"><br />
+                    <figcaption align="center">
+                        Sensors
+                    </figcaption>
+                </figure>
+            </td>
+        </tr>
+    </table>
 </div>
 
 <hr>
