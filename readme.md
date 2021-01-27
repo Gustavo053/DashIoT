@@ -118,7 +118,7 @@
 <p>Clone this repository:</p>
 
 ```sh
-$ git clone https://github.com/iberthyallano/Analysis_of_sorting_algorithms.git
+$ git clone https://github.com/Gustavo053/DashIoT.git
 ```
 
 <p>configure the environment:</p>
