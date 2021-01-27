@@ -6,8 +6,11 @@
 </div>
 
 <p align="center">
-    DashIoT is a dashboard created to send and receive data from analog and digital sensors, in <a href="https://en.wikipedia.org/wiki/Internet_of_things">IoT</a> context, through
-    of esp32 board. This is an integrated research project of <a href="http://ind4fibre.inescbrasil.org.br/">IND4FIBRE</a> through of <a href="http://inescbrasil.org.br/">INESC P&D BRASIL</a>, developed at <a href="http://tapioca.eaj.ufrn.br/">TAPIOCA-LAB</a>
+    DashIoT is a dashboard created to send and receive data from analog and digital sensors, in <a
+        href="https://en.wikipedia.org/wiki/Internet_of_things">IoT</a> context, through
+    of esp32 board. This is an integrated research project of <a
+        href="http://ind4fibre.inescbrasil.org.br/">IND4FIBRE</a> through of <a href="http://inescbrasil.org.br/">INESC
+        P&D BRASIL</a>, developed at <a href="http://tapioca.eaj.ufrn.br/">TAPIOCA-LAB</a>
     of <a href="https://www.ufrn.br/">Federal University of Rio Grande do Norte</a>.
 </p>
 
@@ -63,7 +66,7 @@
 <h2> Instrumentation </h2>
 <div align="center">
     <table>
-        <tr>
+        <tr style="padding:5;">
             <td>
                 <figure>
                     <img src="./__readme/esp32.jpeg" width="220px"><br />
