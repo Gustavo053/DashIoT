@@ -120,11 +120,13 @@
 <h2>How to Use</h2>
 
 <p>Clone this repository:</p>
+
 ```sh
 $ git clone https://github.com/iberthyallano/Analysis_of_sorting_algorithms.git
 ```
 
 <p>configure the environment</p>
+
 ```sh
 $ npm init
 ```
@@ -165,9 +167,7 @@ $ npm start
 
 <h2>How to Contribute</h2>
 
-<ul>
-    <li>Fork this repository</li>
-    <li>Create your branch with your feature: `git checkout -b my-feature`</li>
-    <li>Commit your changes: `git commit -m 'feat: My new feature'`</li>
-    <li>Push your branch: `git push origin my-feature`</li>
-</ul>
+- Fork this repository
+- Create your branch with your feature: `git checkout -b my-feature`
+- Commit your changes: `git commit -m 'feat: My new feature'`
+- Push your branch: `git push origin my-feature`
