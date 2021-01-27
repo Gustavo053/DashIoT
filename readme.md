@@ -112,6 +112,7 @@
         <img src="./__readme/SystemWorkingDiagram.png" />
         <figcaption align="center">Application Execution Flow</figcaption>
     </figure>
+    <p><a href="https://youtu.be/FcQg2Mh99Qg"> Explanation of the execution flow</a></p>
 </div>
 
 <hr />
