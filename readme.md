@@ -66,7 +66,7 @@
 <h2> Instrumentation </h2>
 <div align="center">
     <table>
-        <tr style="padding:5;">
+        <tr>
             <td>
                 <figure>
                     <img src="./__readme/esp32.jpeg" width="220px"><br />
