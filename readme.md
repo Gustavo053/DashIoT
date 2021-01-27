@@ -18,7 +18,7 @@
 <hr />
 
 <h2>Interface</h2>
-<div align="center" style="display: flex; justify-content: space-between; padding: 10px;">
+<div align="center" style="padding:10px;">
     <figure>
         <img src="./__readme/dashboard1.png" height="300px" />
         <figcaption align="center">Dashboard interface</figcaption>
