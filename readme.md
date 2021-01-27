@@ -23,13 +23,13 @@
         <tr>
             <td>
                 <figure>
-                    <img src="./__readme/dashboard1.png" width="500px" />
+                    <img src="./__readme/dashboard1.png" width="700px" />
                     <figcaption align="center">Dashboard interface</figcaption>
                 </figure>
             </td>
             <td>
                 <figure>
-                    <img src="./__readme/dashboard2.png" width="500px" />
+                    <img src="./__readme/dashboard2.png" width="700px" />
                     <figcaption align="center">Dashboard interface</figcaption>
                 </figure>
             </td>
