@@ -1,7 +1,7 @@
 {
-  "name": "estudo-electron",
+  "name": "DashIoT",
   "version": "1.0.0",
-  "description": "Dashboard para controlar o framework arduino_firmata",
+  "description": "Dashboard for ESP32",
   "main": "index.js",
   "scripts": {
     "start": "electron ."
