@@ -19,14 +19,22 @@
 
 <h2>Interface</h2>
 <div align="center" style="padding:10px;">
-    <figure>
-        <img src="./__readme/dashboard1.png" height="300px" />
-        <figcaption align="center">Dashboard interface</figcaption>
-    </figure>
-    <figure>
-        <img src="./__readme/dashboard2.png" height="300px" />
-        <figcaption align="center">Dashboard interface</figcaption>
-    </figure>
+    <table>
+        <tr>
+            <td>
+                <figure>
+                    <img src="./__readme/dashboard1.png" height="300px" />
+                    <figcaption align="center">Dashboard interface</figcaption>
+                </figure>
+            </td>
+            <td>
+                <figure>
+                    <img src="./__readme/dashboard2.png" height="300px" />
+                    <figcaption align="center">Dashboard interface</figcaption>
+                </figure>
+            </td>
+        </tr>
+    </table>
 </div>
 <hr>
 
@@ -62,7 +70,7 @@
         <tr>
             <td>
                 <figure>
-                    <img src="./__readme/esp32.jpeg" width="400px"><br />
+                    <img src="./__readme/esp32.jpeg" width="300px"><br />
                     <figcaption align="center">
                         ESP32
                     </figcaption>
@@ -70,7 +78,7 @@
             </td>
             <td>
                 <figure>
-                    <img src="./__readme/sensors.jpeg" width="400px"><br />
+                    <img src="./__readme/sensors.jpeg" width="300px"><br />
                     <figcaption align="center">
                         Sensors
                     </figcaption>
