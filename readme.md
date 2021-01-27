@@ -62,7 +62,7 @@
         <tr>
             <td>
                 <figure>
-                    <img src="./__readme/esp32.jpeg" width="500px"><br />
+                    <img src="./__readme/esp32.jpeg" width="400px"><br />
                     <figcaption align="center">
                         ESP32
                     </figcaption>
@@ -70,7 +70,7 @@
             </td>
             <td>
                 <figure>
-                    <img src="./__readme/sensors.jpeg" width="500px"><br />
+                    <img src="./__readme/sensors.jpeg" width="400px"><br />
                     <figcaption align="center">
                         Sensors
                     </figcaption>
