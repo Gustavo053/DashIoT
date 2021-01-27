@@ -125,7 +125,7 @@
 $ git clone https://github.com/iberthyallano/Analysis_of_sorting_algorithms.git
 ```
 
-<p>configure the environment</p>
+<p>configure the environment:</p>
 
 ```sh
 $ npm init
@@ -135,7 +135,7 @@ $ npm init
 $ npm install
 ```
 
-<p>Configure the package.json</p>
+<p>Configure the package.json:</p>
 
 ```sh
 {
